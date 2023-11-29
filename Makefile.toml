@@ -1,0 +1,23 @@
+[config]
+skip_core_tasks = true
+
+[tasks.build]
+script = '''
+./util/docker_build.sh lily58:wakamenod
+'''
+
+[tasks.flash]
+script = '''
+qmk flash ./lily58_rev1_wakamenod.hex
+'''
+
+[tasks.help]
+script = '''
+echo  "1. Edit the keymap."
+echo  "2. Run 'build' command."
+echo  "3. Run 'flash' command, then push the reset button under the plastic cover."
+echo  "4. Connect the USB to the right keyboard."
+echo  "5. Repeat step '3'."
+echo
+echo "See also https://leico.github.io/TechnicalNote/QMK/key-customize"
+'''
